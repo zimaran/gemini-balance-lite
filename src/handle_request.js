@@ -23,7 +23,8 @@ export async function handleRequest(request) {
     return openai.fetch(request);
   }
 
-  const targetUrl = `https://generativelanguage.googleapis.com${pathname}${search}`;
+  const GATEWAY_BASE = "https://gateway.ai.cloudflare.com/v1/5360f1f5db50b2194efad49f39af255a/my-gemini/google-ai-studio"
+  const targetUrl = `${GATEWAY_BASE}${pathname}${search}`;
 
   try {
     const headers = new Headers();
